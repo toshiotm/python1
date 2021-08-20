@@ -5,5 +5,6 @@ response = requests.get(url)
 
 response.encoding = response.apparent_encoding
 
-print(response.text)
-print(response.apparent_encoding)
+filename = "download.txt"
+with open(filename, mode="w") as f:
+    f.write(response.text)
